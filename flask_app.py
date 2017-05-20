@@ -3,11 +3,13 @@ import glob
 from flask import render_template
 from flask import request, redirect, url_for
 import sqlite3
-
+import os
 
 
 from flask import Flask
 app = Flask(__name__)
+
+UPLOAD_FOLDER = './excelfiles/'
 
 @app.route('/')
 def index():
@@ -55,7 +57,7 @@ def hello():
 
 @app.route('/first')
 def first():
-    listofexcelfiles = glob.glob("static/*.xlsx")
+    listofexcelfiles = glob.glob("excelfiles/*.xlsx")
     listofsheetnames = []
     for file in listofexcelfiles:
         wb2 = load_workbook(file, read_only = True, data_only=True)
@@ -64,7 +66,7 @@ def first():
 
 @app.route('/second')
 def second():
-    listofexcelfiles = glob.glob("static/*.xlsx")
+    listofexcelfiles = glob.glob("excelfiles/*.xlsx")
     con = sqlite3.connect('database.db')
     cur = con.cursor()
     cur.execute("select * from cells ORDER BY sheet ASC")
@@ -148,7 +150,7 @@ def fourth():
 @app.route('/excel')
 def excel():
     print('test')
-    listofexcelfiles = glob.glob("static/*.xlsx")
+    listofexcelfiles = glob.glob("excelfiles/*.xlsx")
     return render_template('excel.html', files=listofexcelfiles)
 
 
@@ -245,3 +247,10 @@ def createTables():
     return redirect(url_for('first'))
 
 
+@app.route("/upload", methods=["POST"])
+def upload():
+    uploaded_files = request.files.getlist("file[]")
+    print (uploaded_files)
+    for file in uploaded_files:
+        file.save(os.path.join(UPLOAD_FOLDER, file.filename))
+    return ""

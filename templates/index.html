@@ -1,12 +1,18 @@
 <!doctype html>
 <html>
-   <head>
-          <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-             </head>
-                <body>
-                    <form action="/reset">
-                            Welcome to the Excel grader web version. 
-                                             <br>  <br> <input type="submit" value="Start the grading process" />
-                                                 </form>
-                                                    </body>
-                                                    </html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form action="/reset">
+        Welcome to the Excel grader web version. 
+<br>  <br> <input type="submit" value="Start the grading process" />
+</form>
+<br>  <br>
+<form method="POST" enctype="multipart/form-data" action="/upload">
+  <input type="file" name="file[]" multiple="">
+  <input type="submit" value="add">
+</form>
+
+</body>
+</html>
