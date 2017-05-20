@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+   <head>
+       <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+       <style>
+body            { font-family: sans-serif; background-color: #f7f7f7; }
+
+
+table {
+        border-collapse: collapse;
+            border: 1px solid black;
+                }
+       </style>
+   </head>
+   <body>
+
+         <form action = "/updategrades" method = "POST">
+         {% for id, sheet, cell, points in pointslist %}
+
+            <p>Grading sheet number {{sheet+1}} and cell {{cell}}</p>
+            Points : <input type="text" name="point_{{id}}" value="{{points}}">
+            <br><br>
+            <table border = 1>
+                <tr>
+                     <th> FORMULA </th>
+                     <th> VALUE </th>
+                     <th> FREQUENCY </th>
+                     <th> GRADE (%) </th>
+                </tr>
+            {% for rowid, formula, value, frequency, grade in dict[sheet,cell,"points","unique"] %}
+                <tr>
+                     <td> {{ formula }} </td>
+                     <td> {{ value }} </td>
+                     <td> {{ frequency }} </td>
+                     <td> <input type="text" name="grade_{{rowid}}" value="{{grade}}"> </td>
+                </tr>
+            {% endfor %}
+             </table>
+            <HR>
+
+         {% endfor %}
+         <p><input type = "submit" value = "SAVE" /> Do not forget to Save before the FINAL GRADING</p>
+
+      </form>
+    <form action="/finalgrading">
+    <input type="submit" value="FINAL GRADING" />
+    </form>
+   </body>
+</html>

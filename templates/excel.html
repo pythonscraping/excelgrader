@@ -1,0 +1,9 @@
+<!doctype html>
+<title>Hello from Flask</title>
+{% if files %}
+	{% for file in files %}
+       <h3>File: {{ file }}!</h3>
+    {% endfor %}
+{% else %}
+  <h1>Hello, World!</h1>
+{% endif %}

@@ -1,0 +1,17 @@
+<html>
+   <body>
+        You may try those values: <br>
+            Sheet 1: D4:D6,D8:D10 <br>
+                Sheet 2: B13:B16 <br>
+                     <br>  <br> 
+      <form action = "/listofcells" method = "POST">
+      	{% if number %}
+      		{% for n in range(0,number) %}
+      			<p>Cells to grade for sheet number {{n+1}} <input type = "text" name = {{n}} /></p>
+      		{% endfor %}
+      	{% endif %}
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+      
+   </body>
+</html>

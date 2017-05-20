@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Page not found: PythonAnywhere</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Page not found: PythonAnywhere">
+        <meta name="author" content="PythonAnywhere LLP">
+        <meta name="google-site-verification" content="O4UxDrfcHjC44jybs2vajc1GgRkTKCTRgVzeV6I9V14" />
+
+
+        <!-- Le styles -->
+        <link rel="stylesheet" href="/static/CACHE/css/dbb1f2e56897.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/static/CACHE/css/2490bb96ecdd.css" type="text/css" media="screen" />
+
+        <!-- Le javascript -->
+        <script type="text/javascript">
+            var Anywhere = {};
+            Anywhere.urls = {};
+            Anywhere.csrfToken = "ZDoDPYIsiTGCPmsXgfMC5R7mh5zBbkZB";
+        </script>
+        <script type="text/javascript" src="/static/CACHE/js/604ec006f963.js"></script>
+        
+            <script type="text/javascript">
+                $(function() {
+                    $.extend(
+                        Anywhere.urls,
+                        {
+                            task_helper_back: "/user/bricejar/task_helper/back",
+                            task_helper_next: "/user/bricejar/task_helper/next",
+                            task_helper_close: "/user/bricejar/task_helper/close",
+                        }
+                    );
+                    Anywhere.TaskHelper.CURRENT_TASK_STEPS = JSON.parse('["\\n<p><strong>Welcome to PythonAnywhere!</strong></p>\\n<p>Up here you will see instructions walking you through the process of creating a\\nPython web application. You can go forward and back through the steps using the\\narrow buttons below, and you can finish at any time by clicking the cross in\\nthe top right.  If after closing this helper, you want to go through it again\\n--- or try another one -- go to the <strong>Help</strong> page, by following\\nthe link above and to the right.</p>\\n<p>Click the right arrow to get started.</p>\\n", "\\n<p>The process of deploying an app on PythonAnywhere involves three main steps:</p>\\n<ol>\\n<li>Uploading your code to PythonAnywhere</li>\\n<li>Setting up a <em>virtualenv</em>, if you need one</li>\\n<li>Configuring your application using WSGI</li>\\n</ol>\\n<p>NB - only WSGI apps are supported, so that includes anything built with\\nDjango, Flask, Bottle, etc, but custom servers using, eg, Tornado, probably\\nwon\'t work.</p>\\n", "\\n<p>Another note:  If you\'re using <strong>Web2py</strong>, you can skip the rest of this\\nguide.  Instead, go to the <strong>Web</strong> tab, click <strong>Add new web app</strong>, choose\\nweb2py, and then upload your app using the web2py admin UI</p>\\n", "\\n<p><strong>Uploading your code</strong></p>\\n<p>There are several different ways of getting your code onto PythonAnywhere.\\nIf your code is already stored on a cloud VCS system like Bitbucket, Gitlab\\nor Github, then all you need to do is open a <strong>Bash console</strong> and do a\\n<code>git clone</code>.</p>\\n<p>Have a look at the\\n<a href=\\"https://www.pythonanywhere.com/wiki/FTP\\">help page for getting code in and out of PythonAnywhere</a>\\nfor more info.</p>\\n<p>Once you\'ve uploaded your code, you can resume this guide.</p>\\n", "\\n<p><strong>Creating a virtualenv</strong></p>\\n<p>PythonAnywhere has many useful modules pre-installed, but they may not be the\\nsame version as the ones you need for your web app.  Check the\\n<a href=\\"https://www.pythonanywhere.com/batteries_included/\\">batteries included</a> page\\nfor details of exactly what we have installed for each Python version.</p>\\n<p>If the modules you need are already there, then great!  You can skip this step.</p>\\n<p>If not, you\'ll need to set up a virtualenv. Check out these\\n<a href=\\"https://www.pythonanywhere.com/wiki/Virtualenvs\\">instructions for setting a virtualenv</a>,\\nand modify the steps as appropriate for your own dependencies.</p>\\n<p>When you\'ve built your virtualenv, make a note of its path. They often live at <em>/home/myusername/.virtualenvs/virtualenvname</em></p>\\n", "\\n<p><strong>Setting up your web app using manual WSGI configuration</strong></p>\\n<p>To get your app working, we\'ll need to configure a WSGI file that imports your\\napp, as a Python variable.  That means you need to know two things:</p>\\n<ol>\\n<li>\\n<p>The path to the Python file containing your web app\'s\\n  WSGI file.</p>\\n</li>\\n<li>\\n<p>The name of the application.</p>\\n</li>\\n</ol>\\n<p>For Django, the WSGI app is usually stored at <em>projectname/projectname/wsgi.py</em>, and the variable name is <code>application</code></p>\\n<p>For Flask, the WSGI app is usually invoked as <code>app = Flask(__name__)</code> somewhere.  Locate this file and variable</p>\\n<p>For Bottle, the app is usually invoked something like <code>application = default_app()</code></p>\\n", "\\n<p>Armed with the name and location of your WSGI app, you should now go to the <strong>Web</strong> tab,\\nclick <strong>Add new web app</strong>, and then choose <strong>Manual configuration</strong>. Click through to the end.</p>\\n<p>Once it\'s finished, you\'ll be shown a page with the configuration options for your website.\\nIf you\'re using a virtualenv, enter the path to it into the appropriate field near the top.</p>\\n<p>Next we\'ll want to edit the WSGI file which has been generated for you.\\nClick through to it (there\'s a link inthe \\"Code\\" section), and take a look at the\\ncomments, which provide some examples for how to get your app imported.  The main\\nsteps are:</p>\\n<ol>\\n<li>Adding the path that your app lives in to <code>sys.path</code></li>\\n<li>Importing the WSGI app and calling it <code>application</code>.</li>\\n</ol>\\n<p>For example, if your app lives at <em>/home/myusername/myproject/myapp.py</em>, and\\nin there, the WSGI app is a variable called <code>app</code>, you\'ll want:</p>\\n<pre><code>sys.path.append(\'/home/mysusername/myproject\')\\nfrom myapp import app as application\\n</code></pre>\\n<p>We hope that helps!  Do use the <strong>Send feedback</strong> button above if you run into\\nany problems, we\'re always here to help.</p>"]')
+                    Anywhere.TaskHelper.current_step = 0;
+                    Anywhere.TaskHelper.initialize(Anywhere.urls);
+                });
+            </script>
+        
+
+        
+        
+        
+
+        <!-- Le fav and touch icons -->
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+
+
+    </head>
+
+     <body>
+        
+    <nav class="navbar" role="banner">
+        <div id="id_internal_nav_bar_container" class="container fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".right_hand_links" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img id="id_logo" src="/static/anywhere/images/logo-234x35.png" height="35" title="PythonAnywhere logo" alt="PythonAnywhere logo" /></a>
+            </div>
+
+            <div class="collapse navbar-collapse right_hand_links">
+                <div class="row">
+                    <ul id="id_header_links" class="nav navbar-nav navbar-right ">
+                        <li><a id="id_feedback_link" class='feedback_link' href="">Send feedback</a></li>
+                        <li><a id="id_forums_link" href="/forums/">Forums</a></li>
+                        <li><a href="https://help.pythonanywhere.com/" id="id_help_link">Help</a></li>
+                        <li><a href="https://blog.pythonanywhere.com/" id="id_blog_link">Blog</a></li>
+                        
+                        
+                            <li><a href="/user/bricejar/" id="id_dashboard_nav_link">Dashboard</a></li>
+                            <li><a href="/user/bricejar/account/" id="id_account_link">Account</a></li>
+                            <li>
+                            <form class="navbar-form" action="/logout/" method="POST">
+                              <input type='hidden' name='csrfmiddlewaretoken' value='ZDoDPYIsiTGCPmsXgfMC5R7mh5zBbkZB' />
+                              <button type="submit" class="btn btn-link" id="id_logout_link">Log out</button>
+                            </form>
+                            </li>
+                        
+                    </ul>
+                </div>
+
+                
+            </div>
+        </div>
+    </nav>
+
+    
+
+
+
+        
+    
+        <div class="container" id="id_task_helper">
+            <div class="alert alert-success fade in">
+                <a id="id_task_helper_close" class="close" data-dismiss="alert" href="#">&times;</a>
+                <div id="id_task_helper_text">Loading...</div>
+                <div style="width: 90%" id="id_task_helper_buttons">
+                    <button class="btn btn-default" id="id_task_helper_back"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                    <button class="btn btn-default" id="id_task_helper_next"><i class="glyphicon glyphicon-arrow-right"></i></button>
+                    <button style="float: right" class="btn btn-default" id="id_task_helper_close_inline">Close this tutorial</button>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+    
+
+
+        
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <h1 class="error_header" id="id_server_error_title">404 Not Found</h1>
+
+                <p id="id_server_error_text">
+                The page that you seek<br/>
+                can't be found; lost in the clouds.<br/>
+                Please look somewhere else
+
+                <p>
+                <a id="id_link_home" href="/">&laquo; Return to PythonAnywhere home</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+        
+
+        
+
+
+        <div id="id_feedback_dialog" title="Help us improve" style="display:none">
+    <div id="id_feedback_dialog_blurb_big" class="dialog_blurb_big">
+        It's always a pleasure to hear from you!
+    </div>
+    <div id="id_feedback_dialog_blurb_small">
+        Ask us a question, or tell us what you love or hate about PythonAnywhere.<br/>
+        We'll get back to you over email ASAP.
+    </div>
+    <textarea id="id_feedback_dialog_text" rows="6"></textarea>
+    <input id="id_feedback_dialog_email_address" type="text" placeholder="Email address (optional - only necessary if you would like us to contact you)"/>
+    
+    <div id="id_feedback_dialog_error" class="pa_hidden">
+        Sorry, there was an error connecting to the server. <br/>Please try again in a few moments...
+    </div>
+    <div class="dialog_buttons">
+        <img id="id_feedback_dialog_spinner" src="/static/anywhere/images/spinner-small.gif" />
+        <button class="btn btn-primary" id="id_feedback_dialog_ok_button">OK</button>
+        <button class="btn btn-default" id="id_feedback_dialog_cancel_button">Cancel</button>
+    </div>
+</div>
+
+
+        
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-18014859-6', 'auto');
+                ga('send', 'pageview');
+            </script>
+        
+
+        
+        <!-- preload font awesome fonts to avoid glitch when switching icons -->
+        <div style="width: 0; height: 0; overflow: hidden"><i class="fa fa-square-o fa-3x" ></i></div>
+    </body>
+</html>
